@@ -254,6 +254,7 @@ class ManipulatorRobot:
             self.leader_arms[name].write("Torque_Enable", TorqueMode.DISABLED.value)
 
         self.activate_calibration()
+        print("Calibration activation is done!")
 
         # Set robot preset (e.g. torque in leader gripper for Koch v1.1)
         if self.robot_type in ["koch", "koch_bimanual"]:

@@ -310,7 +310,7 @@ def record(
         # Execute a few seconds without recording to give time to manually reset the environment
         # Current code logic doesn't allow to teleoperate during this time.
         # TODO(rcadene): add an option to enable teleoperation during reset
-        # Skip reset for the last episode to be recorded
+        # Skip reset for the last episode to read_with_motor_idsbe recorded
         if not events["stop_recording"] and (
             (recorded_episodes < cfg.num_episodes - 1) or events["rerecord_episode"]
         ):
@@ -338,7 +338,6 @@ def record(
 
     log_say("Exiting", cfg.play_sounds)
     return dataset
-
 
 @safe_disconnect
 def replay(
